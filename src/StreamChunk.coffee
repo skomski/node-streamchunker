@@ -1,4 +1,4 @@
-Stream = require 'stream'
+{ Stream } = require 'stream'
 
 END_OF_FILE = {}
 

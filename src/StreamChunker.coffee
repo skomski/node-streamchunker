@@ -1,4 +1,4 @@
-Stream      = require 'stream'
+{ Stream }  = require 'stream'
 StreamChunk = require './StreamChunk'
 
 class StreamChunker extends Stream
