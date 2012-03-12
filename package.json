@@ -11,10 +11,12 @@
     "test": "make test"
   },
   "dependencies": {
-    "urun": "0.0.6",
-    "utest": "0.0.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "urun": "0.0.6",
+    "utest": "0.0.5",
+    "coffee-script": "1.2.0"
+  },
   "optionalDependencies": {},
   "engines": {
     "node": "*"
