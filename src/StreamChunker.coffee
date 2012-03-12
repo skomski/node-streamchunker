@@ -15,12 +15,16 @@ class StreamChunker extends Stream
     @_streamChunk  = undefined
 
   _createStreamChunk: (options) ->
-    @_streamChunk = new StreamChunk options
+    @_streamChunk = new StreamChunk
+      position: if @chunkCount > 0 then 0 else @startPosition
+      streamPosition: @chunkCount * @chunkSize
     @emit 'chunk', @_streamChunk
     @chunkCount++
 
   write: (buffer) ->
-    @_createStreamChunk position: @startPosition unless @_streamChunk
+    unless @_streamChunk
+      @_createStreamChunk()
+
 
     if buffer.length + @_streamChunk.position > @chunkSize
       written = 0
@@ -32,7 +36,7 @@ class StreamChunker extends Stream
         @_streamChunk.write oldBuffer
         @_streamChunk.end()
 
-        @_createStreamChunk streamPosition: @chunkCount * @chunkSize
+        @_createStreamChunk()
 
       lastBuffer = buffer.slice(written)
       @_streamChunk.write lastBuffer
@@ -42,7 +46,7 @@ class StreamChunker extends Stream
       @_streamChunk.write buffer
       @_streamChunk.end()
 
-      @_createStreamChunk streamPosition: @chunkCount * @chunkSize
+      @_streamChunk = undefined
 
     else if buffer.length + @_streamChunk.position < @chunkSize
       @_streamChunk.write buffer

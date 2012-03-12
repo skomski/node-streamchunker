@@ -8,7 +8,7 @@ class StreamChunk extends Stream
     super
 
     @position       = options.position       || 0
-    @streamPosition = options.streamPosition || @position
+    @streamPosition = options.streamPosition
     @readable = true
 
     @_paused = false
