@@ -1,5 +1,7 @@
 # node-streamchunker
 
+[![Build Status](https://secure.travis-ci.org/Skomski/node-streamchunker.png?branch=master)](http://travis-ci.org/Skomski/node-streamchunker)
+
 Break up streams into fixed-length streams
 
 ## Install
