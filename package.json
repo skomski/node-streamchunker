@@ -1,0 +1,22 @@
+{
+  "author": "Karl Skomski <karl@skomski.com> (http://skomski.com)",
+  "name": "streamchunker",
+  "description": "Break up streams into fixed-length streams",
+  "version": "0.0.0",
+  "repository": {
+    "url": ""
+  },
+  "main": "lib/StreamChunker",
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+    "urun": "0.0.6",
+    "utest": "0.0.5"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
