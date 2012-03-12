@@ -3,6 +3,7 @@
   "name": "streamchunker",
   "description": "Break up streams into fixed-length streams",
   "version": "0.0.0",
+  "keywords": ["stream", "chunk", "buffer", "web", "rest", "restful", "router"],
   "repository": {
     "url": ""
   },
@@ -19,6 +20,6 @@
   },
   "optionalDependencies": {},
   "engines": {
-    "node": "*"
+    "node":">=0.4.0"
   }
 }
