@@ -2,8 +2,8 @@
   "author": "Karl Skomski <karl@skomski.com> (http://skomski.com)",
   "name": "streamchunker",
   "description": "Break up streams into fixed-length streams",
-  "version": "0.0.0",
-  "keywords": ["stream", "chunk", "buffer", "web", "rest", "restful", "router"],
+  "version": "0.0.1",
+  "keywords": ["stream", "chunk", "buffer"],
   "repository": {
     "url": ""
   },
