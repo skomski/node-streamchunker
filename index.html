@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="node-streamchunker : Break up streams into fixed-length streams" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>node-streamchunker</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Skomski/node-streamchunker">Fork Me on GitHub</a>
+
+          <h1 id="project_title">node-streamchunker</h1>
+          <h2 id="project_tagline">Break up streams into fixed-length streams</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/Skomski/node-streamchunker/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/Skomski/node-streamchunker/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Install</h1>
+
+<pre><code>npm install streamchunker
+</code></pre>
+
+<h1>Usage</h1>
+
+<div class="highlight">
+<pre><span class="kd">var</span> <span class="nx">StreamChunker</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'streamchunker'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">streamChunker</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">StreamChunker</span><span class="p">({</span>
+  <span class="nx">chunkSize</span><span class="o">:</span> <span class="mi">5</span>
+<span class="p">});</span>
+
+<span class="nx">streamChunker</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'chunk'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">chunk</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">chunk</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">buffer</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">});</span>
+  <span class="nx">chunk</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'end'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+<span class="nx">streamChunker</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'end'</span> <span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">});</span>
+
+<span class="nx">buffer</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">streamChunker</span><span class="p">);</span>
+</pre>
+</div>
+
+
+<h1>License</h1>
+
+<p>This is free and unencumbered software released into the public domain.</p>
+
+<p>Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.</p>
+
+<p>In jurisdictions that recognize copyright laws, the author or authors of this software dedicate any and all copyright interest in the software to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this software under copyright law.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<p>For more information, please refer to <a href="http://unlicense.org/">http://unlicense.org/</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">node-streamchunker maintained by <a href="https://github.com/Skomski">Skomski</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
